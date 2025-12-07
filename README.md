@@ -29,24 +29,24 @@ SUBMISSION DATE:
 7 DECEMBER 2025
 
 
-## 📂 Deliverables
+# 1.0 Deliverables
 
-### 6.1. Live Website Link (GitHub Pages)
-👉 **[CLICK HERE TO VIEW LIVE SITE]( https://azharisharil.github.io/studentdashboard/)**
+# 1.1. Live Website Link (GitHub Pages)
+**[CLICK HERE TO VIEW LIVE SITE]( https://azharisharil.github.io/studentdashboard/)**
 
 
-### 6.2. GitHub Repository Link
-👉 **[CLICK HERE TO VIEW SOURCE CODE](https://github.com/azharisharil/studentdashboard.git)**
+# 1.2. GitHub Repository Link
+**[CLICK HERE TO VIEW SOURCE CODE](https://github.com/azharisharil/studentdashboard.git)**
 
 
 ---
 
-## 📝 6.3. Documentation
+# 2.0 Documentation
 
-### a. Project Description
+# 2.1 Project Description
 The **UiTM Student Portal** is a dashboard system designed for students to manage their academic activities. It features a responsive Sidebar layout that works on both desktop and mobile devices. The system allows students to view analytics (CGPA, Attendance), register/drop courses, manage assignment submissions, and view group members.
 
-### b. Features Included
+# 2.2 Features Included
 1.  **Responsive Dashboard:** Uses Chart.js to visualize CGPA, Credit Hours, and Attendance.
 2.  **Sidebar Navigation:** A persistent sidebar for easy navigation between modules (Dashboard, Courses, Assignments, Students).
 3.  **Course Management:** Ability to simulate registering new courses and dropping existing ones via DOM manipulation.
@@ -55,7 +55,7 @@ The **UiTM Student Portal** is a dashboard system designed for students to manag
 6.  **Dark/Light Mode:** Theme toggle that persists user preference using LocalStorage.
 7.  **Mobile Friendly:** Sidebar collapses into a hamburger menu on smaller screens.
 
-### c. Instructions to Test Login (Simulation)
+# 2.3 Instructions to Test Login (Simulation)
 Since this is a front-end prototype, no backend database is connected. Please use the following **hardcoded credentials** to simulate a successful login:
 
 | Field | Value |
@@ -65,7 +65,7 @@ Since this is a front-end prototype, no backend database is connected. Please us
 
 > **Note:** Entering incorrect credentials will trigger an error alert. Clicking "Register Now" will open a modal displaying these credentials.
 
-### d. Frameworks & Libraries Used
+### 2.4 Frameworks & Libraries Used
 The project utilizes the following technologies via CDN:
 
 * **HTML5 & CSS3:** Core structure and styling.

@@ -55,7 +55,7 @@ The **UiTM Student Portal** is a dashboard system designed for students to manag
 6.  **Dark/Light Mode:** Theme toggle that persists user preference using LocalStorage.
 7.  **Mobile Friendly:** Sidebar collapses into a hamburger menu on smaller screens.
 
-# 2.3 Instructions to Test Login (Simulation)
+# 2.3 Instructions to Test Login
 Since this is a front-end prototype, no backend database is connected. Please use the following **hardcoded credentials** to simulate a successful login:
 
 | Field | Value |

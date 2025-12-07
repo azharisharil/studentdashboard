@@ -11,8 +11,8 @@ This project is a front-end web application prototype designed to simulate a Stu
 *(Sila ganti link di atas dengan link GitHub Pages anda nanti)*
 
 ### 6.2. GitHub Repository Link
-👉 **[CLICK HERE TO VIEW SOURCE CODE](https://github.com/username-anda/nama-repo-anda)**
-*(Sila ganti link di atas dengan link Repository anda nanti)*
+👉 **[CLICK HERE TO VIEW SOURCE CODE](https://github.com/azharisharil/studentdashboard.git))**
+
 
 ---
 

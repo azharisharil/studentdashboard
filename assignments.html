@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments - UiTM Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> 
+    
+    <style>
+        body { font-family: 'Poppins', sans-serif; transition: background-color 0.3s, color 0.3s; }
+        .sidebar { min-height: 100vh; border-right: 1px solid rgba(0,0,0,0.1); }
+        [data-bs-theme="dark"] .sidebar { border-right: 1px solid rgba(255,255,255,0.1); }
+        .nav-link { color: inherit; margin-bottom: 5px; }
+        .nav-link:hover, .nav-link.active { background-color: rgba(13, 110, 253, 0.1); color: #0d6efd; border-radius: 5px; font-weight: 600; }
+        .card { border: 1px solid rgba(0,0,0,0.1); }
+        [data-bs-theme="dark"] .card { border: 1px solid rgba(255,255,255,0.2); }
+        .icon-btn { border: none; background: none; color: inherit; transition: color 0.3s; }
+        .icon-btn:hover { color: #0d6efd; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar d-md-none bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">UiTM Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"><span class="navbar-toggler-icon"></span></button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse p-3">
+                <div class="d-flex align-items-center mb-4 mb-md-0 me-md-auto text-decoration-none pt-3">
+                    <span class="fs-4 fw-bold text-primary"><i class="bi bi-mortarboard-fill"></i> UiTM Portal</span>
+                </div>
+                <hr>
+                <ul class="nav flex-column mb-auto">
+                    <li class="nav-item"><a href="dashboard.html" class="nav-link"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a></li>
+                    <li class="nav-item"><a href="courses.html" class="nav-link"><i class="bi bi-book-half me-2"></i> Courses</a></li>
+                    <li class="nav-item"><a href="assignments.html" class="nav-link active"><i class="bi bi-journal-text me-2"></i> Assignments</a></li>
+                    <li class="nav-item"><a href="students.html" class="nav-link"><i class="bi bi-people-fill me-2"></i> Members</a></li>
+                </ul>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between px-2">
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle text-body" data-bs-toggle="dropdown"><i class="bi bi-person-circle fs-4 me-2"></i> <strong>Student</strong></a>
+                        <ul class="dropdown-menu text-small shadow"><li><a class="dropdown-item" href="login.html">Sign out</a></li></ul>
+                    </div>
+                    <button class="icon-btn" id="darkModeToggle" title="Toggle Theme"><i class="bi bi-moon-stars-fill fs-5" id="darkModeIcon"></i></button>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex flex-column min-vh-100">
+                <div class="pt-3 pb-2 mb-3 border-bottom d-flex justify-content-between">
+                    <h1 class="h2">My Assignments</h1>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAssignmentModal"><i class="bi bi-plus-lg"></i> Add New Assignment</button>
+                </div>
+
+                <div class="card shadow-sm border-0 mb-3">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead><tr><th>Course Code</th><th>Assignment Title</th><th>Due Date</th><th>Status</th><th>Action</th></tr></thead>
+                                <tbody id="assignmentTableBody">
+                                    <tr>
+                                        <td class="fw-bold text-primary">IMS566</td>
+                                        <td>Individual Assignment</td>
+                                        <td><span class="text-danger fw-bold">2025-12-30</span></td>
+                                        <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                        <td>
+                                            <button class="btn btn-primary btn-sm" onclick="viewAction('IMS566 - Individual', 'Pending', 'Sila hantar sebelum tarikh tutup. Progress semasa: 0%')">
+                                                Submit
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td class="fw-bold text-primary">IMS565</td>
+                                        <td>Pairing Assignment</td>
+                                        <td>2025-12-15</td>
+                                        <td><span class="badge bg-success">Submitted</span></td>
+                                        <td>
+                                            <button class="btn btn-secondary btn-sm" onclick="viewAction('IMS565 - Pairing', 'Submitted', 'Tugasan telah dihantar pada 14 Dec. Menunggu semakan pensyarah.')">
+                                                View
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="fw-bold text-primary">IMS664</td>
+                                        <td>Group Assignment</td>
+                                        <td>2025-12-01</td>
+                                        <td><span class="badge bg-danger">Overdue</span></td>
+                                        <td>
+                                            <button class="btn btn-outline-danger btn-sm" onclick="viewAction('IMS664 - Group', 'Overdue', 'Anda lewat menghantar tugasan ini. Sila hubungi pensyarah untuk rayuan.')">
+                                                Appeal
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="fw-bold text-primary">IMS560</td>
+                                        <td>Quiz</td>
+                                        <td>2025-11-20</td>
+                                        <td><span class="badge bg-info text-dark">Graded (A)</span></td>
+                                        <td>
+                                            <button class="btn btn-outline-primary btn-sm" onclick="viewAction('IMS560 - Quiz', 'Graded (A)', 'Markah: 18/20. <br><i>Komen: Tahniah, pemahaman yang baik tentang ERD.</i>')">
+                                                Feedback
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="mt-auto py-3 text-center text-body-secondary border-top">
+                    <small>&copy; 2025 Universiti Teknologi MARA (UiTM) Faculty of Information Science</small>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addAssignmentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title">Add New Assignment</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body">
+                    <form id="addAssignmentForm">
+                        <div class="mb-3"><label>Course Code</label><select class="form-select" id="newCourseCode"><option value="IMS566">IMS566</option><option value="IMS565">IMS565</option><option value="IMS664">IMS664</option><option value="IMS560">IMS560</option></select></div>
+                        <div class="mb-3"><label>Assignment Title</label><input type="text" class="form-control" id="newTitle" required></div>
+                        <div class="mb-3"><label>Due Date</label><input type="date" class="form-control" id="newDate" required></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-primary">Save Assignment</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="actionModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="actionTitle">Assignment Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <strong>Status:</strong> <span id="actionStatus" class="badge bg-secondary"></span>
+                    </div>
+                    <div class="alert alert-light border" id="actionFeedback">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        const icon = document.getElementById('darkModeIcon');
+        const doc = document.documentElement;
+        
+        doc.setAttribute('data-bs-theme', localStorage.getItem('theme') || 'light');
+        toggle.addEventListener('click', () => {
+            const newTheme = doc.getAttribute('data-bs-theme') === 'light' ? 'dark' : 'light';
+            doc.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            icon.className = newTheme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+        });
+
+        // Function: Add Assignment
+        document.getElementById('addAssignmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const code = document.getElementById('newCourseCode').value;
+            const title = document.getElementById('newTitle').value;
+            const date = document.getElementById('newDate').value;
+            // Note: Added onclick event for newly added items too
+            const newRow = `<tr>
+                <td class="fw-bold text-primary">${code}</td>
+                <td>${title}</td>
+                <td><span class="text-danger fw-bold">${date}</span></td>
+                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                <td><button class="btn btn-primary btn-sm" onclick="viewAction('${code} - ${title}', 'Pending', 'Tugasan baru ditambah. Sila mula buat sekarang.')">Submit</button></td>
+            </tr>`;
+            document.getElementById('assignmentTableBody').insertAdjacentHTML('beforeend', newRow);
+            bootstrap.Modal.getInstance(document.getElementById('addAssignmentModal')).hide();
+        });
+
+        // Function: View Action / Feedback
+        function viewAction(title, status, feedback) {
+            // Set text content
+            document.getElementById('actionTitle').innerText = title;
+            document.getElementById('actionStatus').innerText = status;
+            document.getElementById('actionFeedback').innerHTML = feedback;
+
+            // Change badge color based on status
+            const statusBadge = document.getElementById('actionStatus');
+            statusBadge.className = 'badge'; // reset
+            if(status.includes('Pending')) statusBadge.classList.add('bg-warning', 'text-dark');
+            else if(status.includes('Submitted')) statusBadge.classList.add('bg-success');
+            else if(status.includes('Overdue')) statusBadge.classList.add('bg-danger');
+            else if(status.includes('Graded')) statusBadge.classList.add('bg-info', 'text-dark');
+            else statusBadge.classList.add('bg-secondary');
+
+            // Show Modal
+            new bootstrap.Modal(document.getElementById('actionModal')).show();
+        }
+    </script>
+</body>
+</html>

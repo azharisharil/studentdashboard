@@ -65,7 +65,7 @@ Since this is a front-end prototype, no backend database is connected. Please us
 
 > **Note:** Entering incorrect credentials will trigger an error alert. Clicking "Register Now" will open a modal displaying these credentials.
 
-### 2.4 Frameworks & Libraries Used
+# 2.4 Frameworks & Libraries Used
 The project utilizes the following technologies via CDN:
 
 * **HTML5 & CSS3:** Core structure and styling.

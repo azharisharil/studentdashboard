@@ -1,13 +1,38 @@
-# UiTM Student Portal Prototype
+# UiTM Student Portal (Student Dashboard)
 
 This project is a front-end web application prototype designed to simulate a Student Management Portal. It demonstrates a responsive user interface with simulated authentication and data visualization.
 
----
+UNIVERSITI TEKNOLOGI MARA (UiTM)
+FACULTY OF INFORMATION SCIENCE 
+BACHELOR OF INFORMATION SCIENCE (HONS.)
+INFORMATION SYSTEMS MANAGEMENT(CDIM262)
+
+ADVANCED WEB DESIGN DEVELOPMENT AND
+CONTENT MANAGEMENT 
+(IMS566)
+
+PAIRING ASSIGNMENT:
+
+LITERATURE SURVEY ON PROJECT MANAGEMENT TOOLS AND TECHNIQUES 
+
+PREPARED BY: 
+MUHAMMAD NOOR AZHARI BIN SHARIL (2025305961)
+AHMAD NUR SYAFIQ BIN AHMAD KAMAL AFFENDI (2022882696)
+
+GROUP:
+CDIM2624A
+
+PREPARED FOR:
+DR. MUHAMMAD ASYRAF BIN WAHI ANUAR
+
+SUBMISSION DATE:
+7 DECEMBER 2025
+
 
 ## 📂 Deliverables
 
 ### 6.1. Live Website Link (GitHub Pages)
-👉 **[CLICK HERE TO VIEW LIVE SITE](https://username-anda.github.io/nama-repo-anda/)**
+👉 **[CLICK HERE TO VIEW LIVE SITE]( https://azharisharil.github.io/studentdashboard/)**
 
 
 ### 6.2. GitHub Repository Link
